@@ -1,0 +1,94 @@
+{% load static %}
+
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+  </head>
+  <body>
+    
+    <div id="navbar">
+      {% comment %} ==================== {% endcomment %}
+      <div class="col-sm-3">
+        <h2>
+          <a href="/"><span class="logo">FeastNow </span></a>
+        </h2>
+      </div>
+      
+      {% comment %} ==================== {% endcomment %}
+      <div class="search-container">
+        <form action="/search" method="get">
+          <input
+          id="search-input"
+          class="form-control"
+          type="search"
+          placeholder="Search Here"
+          name="query"
+          id="query"
+          />
+        </form>
+      </div>
+      {% comment %} ==================== {% endcomment %}
+      <div class="links-header">
+      <div class="profile-li">
+        <a class="profile-links" href="/aboutus">About Us</a>
+      </div>
+      
+      <div class="profile-li">
+        <a class="profile-links" href="/send-feedback">Send Feedback</a>
+      </div>
+      
+      <div class="profile-li">
+        <a class="profile-links" href="/customerlogin">Login</a>
+      </div>
+      
+      <div class="cart1 largenav col-sm-2">
+        <a class="cart-button" href="/cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="item-number">{{ product_count_in_cart }}</span>
+        </a>
+      </div>
+
+    </div>
+      {% comment %} ==================== {% endcomment %}
+    </div>
+    
+    
+    
+
+
+
+
+
+
+    <script>
+      $(document).ready(function () {
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "70%";
+
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.body.style.backgroundColor = "rgba(0,0,0,0)";
+        }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/e7016b95f0.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

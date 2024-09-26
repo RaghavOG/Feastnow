@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>About US</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/aboutus.css' %}"
+    />
+  </head>
+
+  <body>
+    {% comment %} {% include "ecom/navbar.html" %} {% endcomment %}
+ {%if request.user.is_authenticated%} 
+ {% include "ecom/customer_navbar.html"%}
+  {%else%} {% include "ecom/navbar.html" %} 
+  {%endif%}
+     
+    <div class="aboutus-main">
+      <div class="aboutus-div d-1">
+        <div class="aboutus-img">
+          <img src="https://images.unsplash.com/photo-1582228096960-7f5d2ec4aa8e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW5kaWFuJTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D" alt="Image 1">
+        </div >
+        <div class="text">
+            <h2>Our Journey</h2>
+            <p>"FeastNow began its journey in the heart of Delhi's Connaught Place, seven years ago. Founded by my father, it started as a humble Indian family vegetarian restaurant, driven by a passion for authentic flavors and warm hospitality. Over the years, we've grown, serving delicious meals and creating memorable experiences for our patrons.</p>
+        </div>
+
+      </div>
+      <div class="aboutus-div d-2">
+        <div class="text">
+          <h2>Our Vision</h2>
+          <p>At FeastNow, our vision is to redefine the dining experience in Delhi's bustling landscape. We strive to delight our guests with exceptional cuisine, warm ambiance, and impeccable service. With a dedication to sustainability and community, we aim to become a cherished culinary destination that celebrates the richness of Indian flavors.</p>
+
+          
+
+      </div>
+      <div class="aboutus-img">
+        <img src="https://media.istockphoto.com/id/92222813/photo/interior-view-of-an-empty-restaurant.webp?b=1&s=170667a&w=0&k=20&c=rD8bqVToOsa8UjfUglM0xxnUSqe5VPfGhmNWSX_UwDg=" alt="Image 1">
+      </div >
+      </div>
+      <div class="aboutus-div d-3">
+        <div class="aboutus-img">
+          <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+        </div >
+        <div class="text">
+            <h2>Our Legacy</h2>
+            <p>Embracing the legacy set by my father, FeastNow continues to embody the essence of Indian hospitality and culinary excellence. Rooted in tradition and fueled by innovation, we take pride in our heritage and the legacy of serving authentic vegetarian delights. Our commitment to quality and tradition is reflected in every dish we prepare, ensuring a delightful dining experience for our guests.</p>
+        </div>
+      </div>
+    </div>
+    
+    {% include "ecom/footer.html" %}
+  </body>
+ </html>

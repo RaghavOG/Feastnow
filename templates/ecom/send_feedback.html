@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Feedback</title>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/feedback.css' %}">
+</head>
+
+<body>
+
+  {% if request.user.is_authenticated %}
+    
+    {% include 'ecom/customer_navbar.html' %}
+  {% else %}
+    {% include "ecom/navbar.html" %}
+  {% endif %}
+
+  <div class="main">
+    <div class="centered-div">
+      <center>
+        <h3 class='alert alert-success'>Send Us Your Valuable Feedback!</h3>
+
+        <form method="post">
+          {% csrf_token %}
+          <ul class="form-style-1">
+            <li>
+              <label>Name <span class="required">*</span></label>
+              {% render_field feedbackForm.name class="field-long" %}
+            </li>
+
+            <li>
+              <label>Your Feedback <span class="required">*</span></label>
+              {% render_field feedbackForm.feedback id="field5" class="field-long field-textarea" %}
+            </li>
+            <li>
+              <input type="submit" value="Send Feedback" />
+            </li>
+          </ul>
+        </form>
+
+      </center>
+    </div>
+  </div>
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>

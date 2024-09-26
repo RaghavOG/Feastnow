@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load i18n static %}
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  </head>
+  <body>
+    {% include "ecom/navbar.html" %}
+  
+    <div class="main">
+        
+    <div class="centered-div"> <!-- Added class "centered-div" -->
+        <form class="box form-style-1" method="post"> <!-- Added class "form-style-1" -->
+            {% csrf_token %}
+            <h1>Customer Login</h1>
+            <p class="text-muted"> Please enter your login and password!</p>
+            {% render_field form.username class="form-control" placeholder="Username" %} <!-- Added class "form-control" -->
+            {% render_field form.password class="form-control" placeholder="Password" %} <!-- Added class "form-control" -->
+            <input type="submit" name="" value="Login" class="form-submit"> <!-- Added class "form-submit" -->
+       <!-- New customer sign up link -->
+       <p>Not a customer yet? <a href="/customersignup">Sign up here</a></p>
+       <p>Admin ? <a href="/adminclick">Click Here</a></p>
+          </form>
+
+    </div>
+    </div>
+     
+    {% include "ecom/footer.html" %}
+  </body>
+</html>
